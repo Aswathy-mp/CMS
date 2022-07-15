@@ -8,13 +8,13 @@
             </label>
             <label>
                 <span>Email</span>
-                <input type="email"  name="email" formControlName="email" type="text" required/>
+                <input type="text"  name="email" formControlName="email" required/>
             </label>
             <label>
                 <span>Password</span>
-                <input type="password" name="password" formControlName="password" type="password" required/>
+                <input name="password" formControlName="password" type="password" required/>
             </label>
-            <button type="submit"  class="submit" (click)="alert()" [disabled]="signupform.invalid">Sign Up</button>
+            <button type="submit"  class="submit"  [disabled]="signupform.invalid">Sign Up</button>
          </form>
         </div>
         <div class="sub-cont">
