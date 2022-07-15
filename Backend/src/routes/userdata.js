@@ -2,6 +2,7 @@ const express = require('express');
 const userdata = express.Router();
 const SignupData=require('../model/signupdata');
 const LoginData=require('../model/logindata');
+const jwt=require('jsonwebtoken')
 
 userdata.post('/signup',(req,res)=>{
     console.log('signup called')
@@ -40,7 +41,9 @@ userdata.post('/login',(req,res)=>{
           var userrole=user.userrole;
           var username=user.name;
           var useremail=user.email
-          return res.json({ success: true, message: "Login successful",userrole:userrole,username:username,useremail:useremail})
+          let payload={userid:user._id}
+          const token=jwt.sign(payload,'Aswathy')
+          return res.json({ success: true, message: "Login successful",userrole:userrole,token:token,username:username,useremail:useremail})
        }
        else{
         return res.json({ success: false, message: "Password not matched" })

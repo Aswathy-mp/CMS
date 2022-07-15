@@ -27,9 +27,10 @@ export class SignInComponent implements OnInit {
    this.Services.logindata(logindata).subscribe(
     res=>{
         if(res.success){
-          localStorage.setItem('username',res.userrole)
+          localStorage.setItem('userrole',res.userrole)
           localStorage.setItem('username',res.username)
           localStorage.setItem('useremail',res.useremail)
+          localStorage.setItem('token',res.token)
           if(res.userrole=='user'||res.userrole=='User'){
             this.router.navigate(['/user']);
           }
