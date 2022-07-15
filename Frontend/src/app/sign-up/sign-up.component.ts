@@ -24,10 +24,16 @@ export class SignUpComponent implements OnInit {
   SignUp(){
     let signup=this.signupform.value
     console.log(signup)
-    this.Service.signupdata(signup).subscribe((data)=>{
-      console.log('subscribed data'+ data);
+    this.Service.signupdata(signup).subscribe((res)=>{
+      if(res.success==true){
+        alert(res.message)
+      }
+      else{
+        alert(res.message)
+      }
+      
     })
-    alert('You have successfully registered')
+    // alert('You have successfully registered')
     this.router.navigate(['/login'])
   }
 }
