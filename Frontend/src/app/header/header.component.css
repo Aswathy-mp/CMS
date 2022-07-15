@@ -1,0 +1,19 @@
+.navbar{
+    background-color:#edc7b7;
+}
+.navbar-brand{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 250%;
+    padding-left: 1%;
+}
+/* #logo{
+    border-radius: 50%;
+    width: 5%;
+} */
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+/* .dropdown-content{
+    display: block;
+   
+} */
